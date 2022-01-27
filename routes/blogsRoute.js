@@ -22,17 +22,17 @@ blogRouter.post('/:username',  (req,res)=>{
 
 })
 
-// blogRouter.get('/:username',  (req,res)=>{
-//     let user = req.params.username
+blogRouter.get('/:username',  (req,res)=>{
+    let user = req.params.username
     
-//     Blog.find({created_by: user}, (err, retUser)=>{
-//         if(err ){
-//             res.status(404).json({message: err.message})
-//         }
-//         res.status(200).json({posts: retUser})
+    Blog.find({created_by: user}, (err, retUser)=>{
+        if(err ){
+            res.status(404).json({message: err.message})
+        }
+        res.status(200).json({posts: retUser})
        
-//     })
-// })
+    })
+})
 
 blogRouter.get('/',   (req,res)=>{
     let post = req.body
