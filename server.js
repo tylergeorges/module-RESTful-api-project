@@ -6,6 +6,9 @@ const mongoConnect = require('./config')
 const bodyParser = require('body-parser')
 const helmet = require('helmet')
 
+const swagger = require('swagger-ui-express')
+const swaggers = require('./docs/swagger')
+
 dotenv.config()
 app.use(bodyParser.json())
 app.use(helmet())
@@ -15,6 +18,8 @@ const blogRouter = require('./routes/blogsRoute')
 
 app.use('/auth', userRouter)
 app.use('/blogs', blogRouter)
+app.use('/swagger', swagger.serve, swagger.setup(swaggers))
+
 
 app.listen(port, ()=>{
     mongoConnect()
