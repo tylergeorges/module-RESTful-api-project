@@ -1,3 +1,4 @@
+const Blog = require('../schemas/blogSchema')
 module.exports = {
     "openapi": "3.0.0",
     "info":
@@ -19,6 +20,7 @@ module.exports = {
             {
             "summary": "Creates post for certain users",
             "description": "Optional extended description in CommonMark or HTML",
+            "schema": Blog
             }
         },
         "/blogs/:username":{
@@ -32,14 +34,16 @@ module.exports = {
             "put":
             {
             "summary": "Updates a SPECFIC post using its id.",
-            "description": "Optional extended description in CommonMark or HTML"
+            "description": "Optional extended description in CommonMark or HTML",
+            "schema": Blog
             }
         },
         "/blogs/:id":{
             "delete":
             {
             "summary": "Deletes a SPECFIC post using its id.",
-            "description": "Optional extended description in CommonMark or HTML"
+            "description": "Optional extended description in CommonMark or HTML",
+            "schema": Blog
             }
         },
         "/auth/register":{
