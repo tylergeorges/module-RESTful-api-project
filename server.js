@@ -1,5 +1,5 @@
 const express = require('express')
-const port = 4242
+const port = process.env.PORT || 4242
 const app = express()
 const dotenv = require('dotenv')
 const mongoConnect = require('./config')
