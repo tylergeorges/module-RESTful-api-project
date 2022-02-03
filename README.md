@@ -1,6 +1,9 @@
 # moduleproject
 
+HEROKU: https://dashboard.heroku.com/apps/tylers-moduleproject
+
 SWAGGER: http://localhost:4242/swagger/#/
+(use after server is started to see how everything works)
 
 ENV variable names - MONGODB_URI , SALT , JWT_SECRET , PORT
 
